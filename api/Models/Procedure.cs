@@ -4,6 +4,6 @@ namespace api.Models
     {
         public int ProcedureID { get; set; }
         public string Description { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
     }
 }
