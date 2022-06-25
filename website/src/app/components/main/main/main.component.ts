@@ -20,5 +20,7 @@ export class MainComponent implements OnInit {
     this._mainService.getAllProcedures().subscribe(data => this.procedures = data);
     this._mainService.getAllTreatments().subscribe(data => this.treatments = data);
   }
-
+  onClickSubmit(result: any) {
+    console.log(result);
+  }
 }
