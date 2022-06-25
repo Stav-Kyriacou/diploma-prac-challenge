@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using api.Handlers;
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
@@ -12,6 +13,7 @@ namespace api.Controllers
         private ProcedureHandler dbHandler = new ProcedureHandler();
 
         [HttpGet]
+        [EnableCors("MyPolicy")]
         [Route("/procedures")]
         public IEnumerable<Procedure> Get()
         {

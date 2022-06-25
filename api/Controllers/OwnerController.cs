@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using api.Handlers;
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
@@ -12,6 +13,7 @@ namespace api.Controllers
         private OwnerHandler dbHandler = new OwnerHandler();
 
         [HttpGet]
+        [EnableCors("MyPolicy")]
         [Route("/owners")]
         public IEnumerable<Owner> Get()
         {
@@ -25,6 +27,7 @@ namespace api.Controllers
         /// <param name="phone"></param>
         /// <returns></returns>
         [HttpPost]
+        [EnableCors("MyPolicy")]
         [Route("/create-owner")]
         public int CreateNewOwner(string surname, string firstname, int phone)
         {

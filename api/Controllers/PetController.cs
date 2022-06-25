@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using api.Handlers;
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
@@ -12,6 +13,7 @@ namespace api.Controllers
         private PetHandler dbHandler = new PetHandler();
 
         [HttpGet]
+        [EnableCors("MyPolicy")]
         [Route("/pets")]
         public IEnumerable<Pet> Get()
         {
@@ -25,6 +27,7 @@ namespace api.Controllers
         /// <param name="type"></param>
         /// <returns></returns>
         [HttpPost]
+        [EnableCors("MyPolicy")]
         [Route("/create-pet")]
         public int CreateNewOwner(int ownerID, string petname, string type)
         {

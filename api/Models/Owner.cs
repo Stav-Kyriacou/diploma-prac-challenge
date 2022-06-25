@@ -4,7 +4,7 @@ namespace api.Models
     {
         public int OwnerID { get; set; }
         public string Surname { get; set; }
-        public string FirstName { get; set; }
+        public string Firstname { get; set; }
         public int Phone { get; set; }
     }
 }

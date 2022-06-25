@@ -26,7 +26,7 @@ namespace api.Handlers
                             {
                                 OwnerID = reader.GetInt32(0),
                                 Surname = reader.GetString(1),
-                                FirstName = reader.GetString(2),
+                                Firstname = reader.GetString(2),
                                 Phone = reader.GetInt32(3)
                             });
                         }
