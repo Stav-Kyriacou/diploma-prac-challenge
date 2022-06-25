@@ -1,1 +1,80 @@
-<p>main works!</p>
+<h1>Owners</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let owner of owners">
+            <td>{{owner.ownerID}}</td>
+            <td>{{owner.firstname}}</td>
+            <td>{{owner.surname}}</td>
+            <td>{{owner.phone}}</td>
+        </tr>
+    </tbody>
+</table>
+<h1>Pets</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>OwnerID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pet of pets">
+            <td>{{pet.petID}}</td>
+            <td>{{pet.ownerID}}</td>
+            <td>{{pet.petName}}</td>
+            <td>{{pet.type}}</td>
+        </tr>
+    </tbody>
+</table>
+<h1>Procedures</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proc of procedures">
+            <td>{{proc.procedureID}}</td>
+            <td>{{proc.description}}</td>
+            <td>${{proc.price}}</td>
+        </tr>
+    </tbody>
+</table>
+<h1>Treatments</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Owner ID</th>
+            <th>Pet ID</th>
+            <th>Procedure ID</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th>Payment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let treat of treatments">
+            <td>{{treat.treatmentID}}</td>
+            <td>{{treat.ownerID}}</td>
+            <td>{{treat.petID}}</td>
+            <td>{{treat.procedureID}}</td>
+            <td>{{treat.date | date: 'dd/MM/yyyy'}}</td>
+            <td>{{treat.notes}}</td>
+            <td>${{treat.payment}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -19,30 +19,33 @@ export class MainService {
   getAllProcedures(): Observable<Procedure[]> {
     return this._http.get<Procedure[]>(this.baseUrl + '/procedures');
   }
-
+  getAllTreatments(): Observable<Treatment[]> {
+    return this._http.get<Treatment[]>(this.baseUrl + '/treatments');
+  }
 }
 export interface Pet {
-  OwnerID: number;
-  PetID: number;
-  PetName: string;
-  Type: string;
+  ownerID: number;
+  petID: number;
+  petName: string;
+  type: string;
 }
 export interface Owner {
-  OwnerID: number;
-  Surname: string;
-  FirstName: string;
-  Phone: number;
+  ownerID: number;
+  surname: string;
+  firstname: string;
+  phone: number;
 }
 export interface Procedure {
-  ProcedureID: number;
-  Description: string;
-  Price: number;
+  procedureID: number;
+  description: string;
+  price: number;
 }
 export interface Treatment {
-  OwnerID: number;
-  TreatmentID: number;
-  PetID: number;
-  Date: Date;
-  Notes: string;
-  Payment: number;
+  ownerID: number;
+  treatmentID: number;
+  petID: number;
+  procedureID: number;
+  date: Date;
+  notes: string;
+  payment: number;
 }
