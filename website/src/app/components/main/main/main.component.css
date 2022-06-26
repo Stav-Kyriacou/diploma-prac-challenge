@@ -1,0 +1,28 @@
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: rgb(48, 48, 48);
+    color: white;
+    text-align: left;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td {
+    border-right: 1px solid black;
+}
+.owner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.owner-container div {
+    margin: 20px;
+}

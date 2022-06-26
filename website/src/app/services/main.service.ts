@@ -16,6 +16,14 @@ export class MainService {
   getAllOwners(): Observable<Owner[]> {
     return this._http.get<Owner[]>(this.baseUrl + '/owners');
   }
+  createOwner(surname: string, firstname: string, phone: number): Observable<number> {
+    const body = "";
+    const params = new HttpParams()
+      .append('surname', surname)
+      .append('firstname', firstname)
+      .append('phone', phone)
+    return this._http.post<number>(this.baseUrl + '/create-owner', body, { 'params': params });
+  }
   getAllProcedures(): Observable<Procedure[]> {
     return this._http.get<Procedure[]>(this.baseUrl + '/procedures');
   }
